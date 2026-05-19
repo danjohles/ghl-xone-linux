@@ -24,7 +24,7 @@ This script intercepts the raw USB packets from the GHL Xbox One dongle and tran
       ```bash
       sudo python3 ghlive.py
       ```
-      *(If you are on an immutable distro like Bazzite, run it like this instead:)*
+      *If you are on an immutable distro like Bazzite, run it like this instead:*
       ```bash
       sudo env PYTHONPATH=$(python3 -m site --user-site) python3 /path/to/script/ghlive.py
       ```

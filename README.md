@@ -19,7 +19,7 @@ This script intercepts the raw USB packets from the GHL Xbox One dongle and tran
 ## Usage & Testing
    
    Because this script directly interfaces with USB hardware and creates a virtual input device at the kernel level, it must be run with root privileges
-   1. Insert your GHL Xbox One USB dongle into your PC - dongle will be turned off
+   1. Insert your GHL Xbox One USB dongle into your PC - the dongle will be turned off
    2. Run the script from your terminal:
       ```bash
       sudo python3 ghlive.py
@@ -28,9 +28,10 @@ This script intercepts the raw USB packets from the GHL Xbox One dongle and tran
       ```bash
       sudo env PYTHONPATH=$(python3 -m site --user-site) python3 /path/to/script/ghlive.py
       ```
-   3. Sync: Press the sync button on the dongle, then press the sync button on your guitar to pair them
+   3. The dongle will light up and is ready to sync the Guitar. Press the sync button on the dongle, then press the sync button on your Guitar to pair them if it is your first time connecting them.
+   All subsequent times, it is enough to press the "home" button on the Guitar
    4. Play whatever you want to play with it. The guitar will now be recognized as a standard gamepad
-   5. unplug the dongle or press ctrl+c to stop the script when you're done
+   5. Unplug the dongle or press ctrl+c to stop the script when you're done
   
   ## Credits 
 This project was heavily inspired by the original C implementation and reverse-engineering work done in the [paroj/xpad](https://github.com/paroj/xpad) Linux kernel module. Their foundational work in mapping the GHL dongle's USB packet structure made this Python port possible.

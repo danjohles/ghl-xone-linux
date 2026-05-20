@@ -33,7 +33,7 @@ capabilities = {
     e.EV_ABS: [
         (e.ABS_HAT0X, AbsInfo(0, -1, 1, 0, 0, 0)),
         (e.ABS_HAT0Y, AbsInfo(0, -1, 1, 0, 0, 0)),
-        (e.ABS_Y,     AbsInfo(0, -32767, 32767, 0, 0, 0)),
+        (e.ABS_Y,     AbsInfo(0, -32767, 32767, 16000, 512, 0)),
         (e.ABS_Z,     AbsInfo(0, -32767, 32767, 255, 512, 0)),
         (e.ABS_RZ,    AbsInfo(0, -32767, 32767, 255, 512, 0))
     ]

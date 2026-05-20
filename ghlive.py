@@ -27,15 +27,15 @@ DPAD_MAP = {
 # config virtual controller
 capabilities = {
     e.EV_KEY: [
-        e.BTN_A, e.BTN_B, e.BTN_X, e.BTN_Y, e.BTN_TL, e.BTN_TR,
+        e.BTN_A, e.BTN_C, e.BTN_X, e.BTN_Y, e.BTN_Z, e.BTN_SELECT, 
         e.BTN_START, e.BTN_MODE, e.BTN_THUMBL, e.BTN_THUMBR
     ],
     e.EV_ABS: [
         (e.ABS_HAT0X, AbsInfo(0, -1, 1, 0, 0, 0)),
         (e.ABS_HAT0Y, AbsInfo(0, -1, 1, 0, 0, 0)),
         (e.ABS_Y,     AbsInfo(0, -32767, 32767, 0, 0, 0)),
-        (e.ABS_Z,     AbsInfo(0, -32767, 32767, 0, 0, 0)),
-        (e.ABS_RZ,    AbsInfo(0, -32767, 32767, 0, 0, 0))
+        (e.ABS_Z,     AbsInfo(0, -32767, 32767, 255, 512, 0)),
+        (e.ABS_RZ,    AbsInfo(0, -32767, 32767, 255, 512, 0))
     ]
 }
 
@@ -104,12 +104,12 @@ def main():
                 if len(data) >= 11 and data[0] == 0x21:
 
                     # frets
-                    ui.write(e.EV_KEY, e.BTN_A, 1 if (data[4] & 0x01) else 0)
-                    ui.write(e.EV_KEY, e.BTN_B, 1 if (data[4] & 0x02) else 0)
-                    ui.write(e.EV_KEY, e.BTN_X, 1 if (data[4] & 0x04) else 0)
-                    ui.write(e.EV_KEY, e.BTN_Y, 1 if (data[4] & 0x08) else 0)
-                    ui.write(e.EV_KEY, e.BTN_TL, 1 if (data[4] & 0x10) else 0)
-                    ui.write(e.EV_KEY, e.BTN_TR, 1 if (data[4] & 0x20) else 0)
+                    ui.write(e.EV_KEY, e.BTN_A,      1 if (data[4] & 0x01) else 0)
+                    ui.write(e.EV_KEY, e.BTN_C,      1 if (data[4] & 0x02) else 0)
+                    ui.write(e.EV_KEY, e.BTN_X,      1 if (data[4] & 0x04) else 0)
+                    ui.write(e.EV_KEY, e.BTN_Y,      1 if (data[4] & 0x08) else 0)
+                    ui.write(e.EV_KEY, e.BTN_Z,      1 if (data[4] & 0x10) else 0)
+                    ui.write(e.EV_KEY, e.BTN_SELECT, 1 if (data[4] & 0x20) else 0)
 
                     # dpad
                     dpad_val = data[6] & 0x0F

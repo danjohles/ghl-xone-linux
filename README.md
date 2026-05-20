@@ -35,4 +35,8 @@ This script intercepts the raw USB packets from the GHL Xbox One dongle and tran
   
   ## Credits 
 This project was heavily inspired by the original C implementation and reverse-engineering work done in the [paroj/xpad](https://github.com/paroj/xpad) Linux kernel module. Their foundational work in mapping the GHL dongle's USB packet structure made this Python port possible.
-   
+
+
+## Quality of Life
+
+**Plug-and-Play Guide [here](syste.md)**
